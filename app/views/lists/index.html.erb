@@ -1,7 +1,13 @@
-<h1>Lists</h1>
+<h1>Save any kind of movies</h1>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= list.name %></li>
+<h3>My Lists</h3>
+
+<!-- Link to create a movie list -->
+<%= link_to "Create a movie list", new_list_path, class: "btn btn-flat" %>
+
+<!-- Show lists -->
+<% @lists.each do |list| %>
+  <%= link_to list_path(list) do %>
+    <%= list.name %>
   <% end %>
-</ul>
+<% end %>
